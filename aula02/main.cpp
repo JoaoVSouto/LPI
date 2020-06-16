@@ -9,18 +9,15 @@ int main(int argc, char const *argv[]) {
     return -1;
   }
 
+  std::string mensagem;
+
   if (argc == 2) {
-    std::string mensagem;
-
     std::cout << "Digite uma mensagem:\n";
-    std::getline(std::cin, mensagem);
-
-    std::cout << "Mensagem adicionada!\n"
-              << mensagem << "\n";
-  } else {
-    std::cout << "Mensagem adicionada!\n"
-              << argv[2] << "\n";
+    while (std::getline(std::cin, mensagem) && not mensagem.length()) continue;
   }
+
+  std::cout << "Mensagem adicionada!\n"
+            << (mensagem.length() ? mensagem : argv[2]) << "\n";
 
   return 0;
 }
