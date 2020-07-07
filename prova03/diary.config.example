@@ -1,0 +1,2 @@
+default_format=%d %t: %m
+path=diary.md
